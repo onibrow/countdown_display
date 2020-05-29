@@ -8,55 +8,60 @@
 #define SCREEN_HEIGHT 32
 #define OLED_RESET     4
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
-
-void pusheen_bounce(void) {
-  display.clearDisplay();
-  display.drawBitmap(
-    (display.width()  - PUSHEEN_WIDTH_BIG),
-    (display.height() - PUSHEEN_HEIGHT_BIG),
-    pusheen_1, PUSHEEN_WIDTH_BIG, PUSHEEN_HEIGHT_BIG, 1);
-  display.display();
-  delay(30);
-
-  display.clearDisplay();
-  display.drawBitmap(
-    (display.width()  - PUSHEEN_WIDTH_BIG),
-    (display.height() - PUSHEEN_HEIGHT_BIG),
-    pusheen_2, PUSHEEN_WIDTH_BIG, PUSHEEN_HEIGHT_BIG, 1);
-  display.display();
-  delay(30);
-}
-
-void pusheen_sleep(void) {
-  display.clearDisplay();
-  display.drawBitmap(
-    (display.width()  - PUSHEEN_WIDTH_BIG),
-    (display.height() - PUSHEEN_HEIGHT_BIG),
-    pusheen_1_sleep, PUSHEEN_WIDTH_BIG, PUSHEEN_HEIGHT_BIG, 1);
-  display.display();
-  delay(1000);
-
-  display.clearDisplay();
-  display.drawBitmap(
-    (display.width()  - PUSHEEN_WIDTH_BIG),
-    (display.height() - PUSHEEN_HEIGHT_BIG),
-    pusheen_2_sleep, PUSHEEN_WIDTH_BIG, PUSHEEN_HEIGHT_BIG, 1);
-  display.display();
-  delay(1000);
-}
+#define DELAY_BOUNCE 333
+#define DELAY_SLEEP  1000
 
 void setup() {
-  Serial.begin(115200);
+    Serial.begin(115200);
 
-  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
-    Serial.println(F("SSD1306 allocation failed"));
-    for (;;);
-  }
-  display.clearDisplay();
+    if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+        Serial.println(F("SSD1306 allocation failed"));
+        for (;;);
+    }
+    display.clearDisplay();
 }
 
 void loop() {
-  pusheen_bounce();
-//  pusheen_sleep();
+    pusheen_bounce(10);
+    pusheen_sleep(5);
 }
 
+void pusheen_bounce(uint8_t t) {
+    for (uint8_t i = 0; i < t; i++) {
+        display.clearDisplay();
+        display.drawBitmap(
+                (display.width()  - PUSHEEN_WIDTH_BIG),
+                (display.height() - PUSHEEN_HEIGHT_BIG),
+                pusheen_1, PUSHEEN_WIDTH_BIG, PUSHEEN_HEIGHT_BIG, 1);
+        display.display();
+        delay(DELAY_BOUNCE);
+
+        display.clearDisplay();
+        display.drawBitmap(
+                (display.width()  - PUSHEEN_WIDTH_BIG),
+                (display.height() - PUSHEEN_HEIGHT_BIG),
+                pusheen_2, PUSHEEN_WIDTH_BIG, PUSHEEN_HEIGHT_BIG, 1);
+        display.display();
+        delay(DELAY_BOUNCE);
+    }
+}
+
+void pusheen_sleep(uint8_t t) {
+    for (uint8_t i = 0; i < t; i++) {
+        display.clearDisplay();
+        display.drawBitmap(
+                (display.width()  - PUSHEEN_WIDTH_BIG),
+                (display.height() - PUSHEEN_HEIGHT_BIG),
+                pusheen_1_sleep, PUSHEEN_WIDTH_BIG, PUSHEEN_HEIGHT_BIG, 1);
+        display.display();
+        delay(DELAY_SLEEP);
+
+        display.clearDisplay();
+        display.drawBitmap(
+                (display.width()  - PUSHEEN_WIDTH_BIG),
+                (display.height() - PUSHEEN_HEIGHT_BIG),
+                pusheen_2_sleep, PUSHEEN_WIDTH_BIG, PUSHEEN_HEIGHT_BIG, 1);
+        display.display();
+        delay(DELAY_SLEEP);
+    }
+}

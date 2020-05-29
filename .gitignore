@@ -1,0 +1,108 @@
+#/bin/bash
+
+*.__pycache__/
+__pycache__/
+*.ok_messages
+*.ok_refresh
+*.swp
+.*.swp
+*.swo
+.*.swo
+*.ipynb_checkpoints
+
+#########
+# EAGLE #
+#########
+# lbr temp files
+*.l#*
+scono.l#*
+*.job
+
+# backup sch/brd files
+**/*.[b,s,l,d]#*
+
+##########
+# Gerbers #
+##########
+
+#ignore gerber files because you can generate them with the cam jobs.
+#therefore, no need to version control them
+
+*.pro
+*.bor
+*.cmp
+*.crc
+*.crs
+*.dri
+*.drd
+*.gpi
+*.ly15
+*.ly2
+*.plc
+*.pls
+*.sol
+*.stc
+*.sts
+*.fab
+*.oln
+*.sco
+placement.*
+toollist.*
+
+#################
+# C Build Files #
+#################
+
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+

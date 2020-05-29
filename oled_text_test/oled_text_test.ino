@@ -1,5 +1,6 @@
 #include <SPI.h>
 #include <Wire.h>
+#include "oled_text_test.h"
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 

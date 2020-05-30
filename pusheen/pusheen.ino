@@ -18,6 +18,7 @@ void setup() {
         Serial.println(F("SSD1306 allocation failed"));
         for (;;);
     }
+    display.dim(true);
     display.clearDisplay();
 }
 

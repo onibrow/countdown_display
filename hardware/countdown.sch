@@ -7149,7 +7149,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="J3" library="scono" library_urn="urn:adsk.eagle:library:14850048" deviceset="CONN_02" device="" package3d_urn="urn:adsk.eagle:package:38039/1" value="LiPo"/>
 <part name="C7" library="scono" library_urn="urn:adsk.eagle:library:14850048" deviceset="CAP" device="0402-CAP" package3d_urn="urn:adsk.eagle:package:14850678/3" value="1uF"/>
 <part name="U$1" library="scono" library_urn="urn:adsk.eagle:library:14850048" deviceset="CL-SB-12C-12" device=""/>
-<part name="R2" library="scono" library_urn="urn:adsk.eagle:library:14850048" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:14850590/3" value="125k"/>
+<part name="R2" library="scono" library_urn="urn:adsk.eagle:library:14850048" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:14850590/3" value="51k"/>
 <part name="J4" library="scono" library_urn="urn:adsk.eagle:library:14850048" deviceset="CONN_04" device="1X04_NO_SILK" package3d_urn="urn:adsk.eagle:package:38094/1" value="OLED"/>
 <part name="R3" library="scono" library_urn="urn:adsk.eagle:library:14850048" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:14850590/3" value="1k"/>
 <part name="BT1" library="scono" library_urn="urn:adsk.eagle:library:14850048" deviceset="BK-916-TR" device=""/>

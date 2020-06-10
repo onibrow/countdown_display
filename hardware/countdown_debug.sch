@@ -5910,6 +5910,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="SUPPLY1" library="scono" library_urn="urn:adsk.eagle:library:14850048" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="scono" library_urn="urn:adsk.eagle:library:14850048" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="scono" library_urn="urn:adsk.eagle:library:14850048" deviceset="GND" device=""/>
+<part name="C3" library="scono" library_urn="urn:adsk.eagle:library:14850048" deviceset="CAP" device="0402-CAP" package3d_urn="urn:adsk.eagle:package:14850678/3" value="0.1uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -6073,6 +6074,10 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <instance part="SUPPLY1" gate="GND" x="119.38" y="5.08" smashed="yes"/>
 <instance part="SUPPLY2" gate="GND" x="162.56" y="55.88" smashed="yes"/>
 <instance part="SUPPLY3" gate="GND" x="68.58" y="33.02" smashed="yes"/>
+<instance part="C3" gate="G$1" x="228.6" y="116.84" smashed="yes" rot="R90">
+<attribute name="NAME" x="227.076" y="115.57" size="1.016" layer="95" rot="R90"/>
+<attribute name="VALUE" x="231.14" y="115.57" size="1.016" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -6325,6 +6330,10 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <wire x1="220.98" y1="109.22" x2="220.98" y2="111.76" width="0.1524" layer="91"/>
 <label x="220.98" y="109.22" size="1.778" layer="95"/>
 <pinref part="SUPPLY6" gate="GND" pin="GND"/>
+<pinref part="C3" gate="G$1" pin="1"/>
+<wire x1="228.6" y1="114.3" x2="228.6" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="228.6" y1="111.76" x2="220.98" y2="111.76" width="0.1524" layer="91"/>
+<junction x="220.98" y="111.76"/>
 </segment>
 <segment>
 <pinref part="J9" gate="G$1" pin="UGND"/>
@@ -6438,6 +6447,9 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <wire x1="220.98" y1="124.46" x2="220.98" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="R6" gate="G$1" pin="2"/>
 <label x="220.98" y="121.92" size="1.778" layer="95"/>
+<pinref part="C3" gate="G$1" pin="2"/>
+<wire x1="220.98" y1="119.38" x2="228.6" y2="119.38" width="0.1524" layer="91"/>
+<junction x="220.98" y="119.38"/>
 </segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="PD3(PCINT19/OC2B/INT1)"/>

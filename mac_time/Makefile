@@ -1,5 +1,9 @@
 MONITOR_PORT = /dev/ttyACM* /dev/ttyUSB*
-ISP_PROG     = usbtiny
+AVRDUDE_OPTS = -v
+# ISP_PROG     = usbtiny
+ISP_PROG     = stk500v1
+AVRDUDE_ARD_PROGRAMMER = stk500v1
+ISP_PORT = /dev/ttyACM*
 ARDMK_DIR    = /usr/share/arduino
 
 ### ARDUINO_DIR
@@ -16,7 +20,10 @@ ARDUINO_LIBS = SPI Wire Adafruit_GFX Adafruit_SSD1306 Adafruit_BusIO ds3231 LowP
 
 ### BOARD_TAG
 ### It must be set to the board you are currently using. (i.e uno, mega2560, etc.)
-BOARD_TAG         = uno
+BOARD_TAG         = pro
+BOARD_SUB         = 8MHzatmega328
+AVRDUDE_ARD_BAUDRATE = 19200
+#BOARD_CLOCK       = 8mhz
 
 ### MONITOR_BAUDRATE
 ### It must be set to Serial baudrate value you are using.

@@ -17,28 +17,29 @@
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 volatile struct ts t;
 const uint8_t wake_pin = 3;
-const byte ledPin = 13;
-volatile byte state = LOW;
+const uint8_t ds_pin = 16;
 
 void wakeUp()
 {
     // Just a handler for the pin interrupt.
-    state = !state;
+    return;
 }
 
 void setup() {
-    Serial.begin(115200);
+//    Serial.begin(115200); 
     pinMode(wake_pin, INPUT);
-    pinMode(ledPin, OUTPUT);
+    pinMode(ds_pin, OUTPUT);
+    digitalWrite(ds_pin, HIGH);
 
     // OLED Display Setup {{
     if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
-        Serial.println(F("SSD1306 allocation failed"));
+//        Serial.println(F("SSD1306 allocation failed"));
         for (;;);
     }
     display.dim(true);
     display.clearDisplay();
     display.display();
+    display.ssd1306_command(SSD1306_DISPLAYOFF);
     // }}
 
     /*
@@ -57,12 +58,12 @@ void setup() {
     // }}
      */
 
-    Serial.println("Attached Interrupt!");
+//    Serial.println("Attached Interrupt!");
     delay(5);
 }
 
 void loop() {
-    digitalWrite(ledPin, state);
+    digitalWrite(ds_pin, LOW);
     attachInterrupt(digitalPinToInterrupt(wake_pin), wakeUp, RISING);
 
     // Enter power down state with ADC and BOD module disabled.
@@ -75,6 +76,7 @@ void loop() {
 }
 
 void get_datetime() {
+    display.ssd1306_command(SSD1306_DISPLAYON);
     // DS3231_get(&t);
     // Random Gen {{
     t.hour = random(0, 24);
@@ -91,6 +93,8 @@ void get_datetime() {
     else {
         pusheen_bounce();
     }
+    display.ssd1306_command(SSD1306_DISPLAYOFF);
+    delay(1000);
 }
 
 void draw_datetime() {

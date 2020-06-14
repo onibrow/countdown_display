@@ -10,16 +10,16 @@
 #define SCREEN_HEIGHT 32
 #define OLED_RESET     4
 
-#define SCREEN_TIME  250
-#define DELAY_BOUNCE  12
-#define DELAY_SLEEP  50
+#define SCREEN_TIME  5000
+#define DELAY_BOUNCE  250
+#define DELAY_SLEEP   100
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 RTC_DS3231 rtc;
 DateTime now;
 TimeSpan diff;
 DateTime end_date = DateTime(2020, 9, 1, 20, 0, 0);
-DateTime compile_time = DateTime(2020, 6, 12, 23, 50, 3);
+DateTime compile_time = DateTime(2020, 6, 13, 12, 30, 3);
 
 const uint8_t wake_pin = 3;
 const uint8_t ds_pin = 16;

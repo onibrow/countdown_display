@@ -19,7 +19,7 @@ RTC_DS3231 rtc;
 DateTime now;
 TimeSpan diff;
 DateTime end_date = DateTime(2020, 9, 1, 20, 0, 0);
-DateTime compile_time = DateTime(2020, 6, 13, 12, 30, 3);
+DateTime compile_time = DateTime(2020, 6, 17, 11, 45, 3);
 
 const uint8_t wake_pin = 3;
 const uint8_t ds_pin = 16;

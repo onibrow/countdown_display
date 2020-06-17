@@ -12,7 +12,7 @@
 
 #define SCREEN_TIME  5000
 #define DELAY_BOUNCE  250
-#define DELAY_SLEEP   100
+#define DELAY_SLEEP  1000
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 RTC_DS3231 rtc;

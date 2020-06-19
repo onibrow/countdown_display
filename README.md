@@ -22,3 +22,6 @@ A 40mAh LiPo battery was chosen as the main power supply for this device. Consid
 
 ## Gallery
 
+![photo](img/countdown_hardware.jpg)
+
+![gif](img/countdown.gif)

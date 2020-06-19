@@ -2,6 +2,20 @@
 
 A low power countdown display
 
+## Manual
+
+### On / Off
+
+The slide switch in the right position (closer to the edge of the device) is the "Discharge" or ON mode. The slide switch in the left position (closer to the middle of the device) is the "Charge / OFF" mode.
+
+### Charging
+
+To charge the battery, put the slide switch into the "Charge / OFF" mode - this will disconnect the battery from the rest of the device and enable it to be charged. At this state, the display will no longer turn on. Plug in a microUSB cable to the port and watch the indicator LED turn on. If RED, the battery is charging - if GREEN, the charge is complete. From fully discharged to fully charged, it will take about 2.5 hours.
+
+### Safety
+
+As this device has all of its electrical components exposed, do not touch this with wet hands or poke it with metal / conductive objects. There are safety electronics in play to prevent the battery from over-currenting and frying itself, it is generally not a great idea to mess around with LiPo batteries. 
+
 ## Features
 
 ### 128x32 OLED Display
